@@ -1,0 +1,8 @@
+﻿Key,Name,Attack,AttackSpeed,MaxHp,Hp,Rating
+1,Ace,30,3,0,0,Nomal
+2,Trio,40,3,0,0,Rare
+3,Iso,60,3,0,0,Unique
+4,Mest,100,3,0,0,Legend
+101,Enemy1,0,0,100,100,Weak
+102,Enemy2,0,0,120,120,Medium
+103,Enemy3,0,0,140,140,Strong
