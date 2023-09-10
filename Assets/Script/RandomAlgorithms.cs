@@ -157,4 +157,18 @@ public class RandomAlgorithms : MonoBehaviour
 
 
     }
+    public void SpawnUnit2()
+    {
+        for(int i=0;i< PlayerPrefs.GetInt("Unit2", 0); i++)
+        {
+            Invoke("Rands", 2f);
+        }
+    }
+    public void SpawnUnit3()
+    {
+        for (int i = 0; i < PlayerPrefs.GetInt("Unit3", 0); i++)
+        {
+            Invoke("Rands", 2f);
+        }
+    }
 }

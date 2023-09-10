@@ -30,6 +30,7 @@ public class ButtonMange : MonoBehaviour
         SpawnBtn.SetActive(set);
         UnitBtn.SetActive(set);
         DownPanel();
+        GameObject.Find("StartPos").GetComponent<SpawnEnemy>().On_UnitWindow();
     }
     void DownPanel()
     {

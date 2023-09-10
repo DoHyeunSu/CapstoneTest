@@ -21,7 +21,7 @@ public class EndText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Finish);
+        //Debug.Log(Finish);
         if (Finish == false)
         {
             switch (num)

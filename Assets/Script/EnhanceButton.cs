@@ -48,27 +48,36 @@ public class EnhanceButton : MonoBehaviour
     }
     public void EnhanceClick()
     {
+        CoinScript coins = GameObject.Find("Canvas").GetComponent<CoinScript>();
         if (clickedObject == null)
             return;
-        atk_V = clickedObject.GetComponent<UnitAction>().AtkValue;
-        if (currentLevel < successRates.Length)
+        if(coins.ReturnCoin() >= clickedObject.GetComponent<UnitInformation>().EnhanceCoin)
         {
-            float randomValue = Random.value;
-            if (randomValue < successRates[currentLevel])
+            coins.SubCoin(clickedObject.GetComponent<UnitInformation>().EnhanceCoin);
+            clickedObject.GetComponent<UnitInformation>().EnhanceCoin += 50;
+            Debug.Log(clickedObject.GetComponent<UnitInformation>().EnhanceCoin);
+
+            atk_V = clickedObject.GetComponent<UnitAction>().AtkValue;
+            if (currentLevel < successRates.Length)
             {
-                atk_V += 5;
-                currentLevel++;
-                clickedObject.GetComponent<UnitAction>().AtkValue = atk_V;
+                float randomValue = Random.value;
+                if (randomValue < successRates[currentLevel])
+                {
+                    atk_V += 5;
+                    currentLevel++;
+                    clickedObject.GetComponent<UnitAction>().AtkValue = atk_V;
+                }
+                else
+                {
+                    Debug.Log("강화실패");
+                }
             }
             else
             {
-                Debug.Log("강화실패");
+                Debug.Log("최대 레벨");
             }
         }
-        else
-        {
-            Debug.Log("최대 레벨");
-        }
+        
     }
 
     public void TextDisplay()

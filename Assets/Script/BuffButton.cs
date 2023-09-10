@@ -51,32 +51,36 @@ public class BuffButton : MonoBehaviour
     }
     public void OnClickBuff()
     {
-        if (on == false)
+        CoinScript coins = GameObject.Find("Canvas").GetComponent<CoinScript>();
+        if (coins.ReturnCoin() >= 100)
         {
-            on = !on;
-            int seed = (int)System.DateTime.Now.Ticks;
-            Mer = new MersenneAlgorithm.RandomMersenne((uint)seed);
-            randomNum = Mer.IRandom(0, 100);
-            if (randomNum < 40)//공격력 10업
+            if (on == false)
             {
-                ApplyBuff(10);
+                coins.SubCoin(100);
+                on = !on;
+                int seed = (int)System.DateTime.Now.Ticks;
+                Mer = new MersenneAlgorithm.RandomMersenne((uint)seed);
+                randomNum = Mer.IRandom(0, 100);
+                if (randomNum < 40)//공격력 10업
+                {
+                    ApplyBuff(10);
+                }
+                else if (randomNum < 80)
+                {
+                    ApplyBuff(-10);
+                }
+                else if (randomNum < 90)
+                {
+                    ApplyBuff(40);
+                }
+                else if (randomNum < 100)
+                {
+                    ApplyBuff(-40);
+                }
             }
-            else if (randomNum < 80)
-            {
-                ApplyBuff(-10);
-            }
-            else if (randomNum < 90)
-            {
-                ApplyBuff(40);
-            }
-            else if (randomNum < 100)
-            {
-                ApplyBuff(-40);
-            }
+            else
+                Debug.Log("이미 버프가 활성화 되있습니다");
         }
-        else
-            Debug.Log("이미 버프가 활성화 되있습니다");
-        
     }
     void ApplyBuff(int value)
     {

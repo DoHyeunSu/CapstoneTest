@@ -13,6 +13,8 @@ public class SpawnEnemy : MonoBehaviour
     private ButtonMange bm;
     private bool lastTrigger = false;
     private EndText end;
+    private GameObject Unit_Window;
+    private bool UnitOn;
 
     public int roundNum = 1;
     public bool spawnBool;
@@ -26,6 +28,7 @@ public class SpawnEnemy : MonoBehaviour
         bm = GameObject.Find("Canvas").GetComponent<ButtonMange>();
         end = GameObject.Find("Canvas").GetComponent<EndText>();
         InvokeRepeating("SpawnEnemies", 5, 1);//5초 후부터 1초마다 반복 실행
+        Unit_Window = GameObject.Find("Unit_Window");
     }
 
     // Update is called once per frame
@@ -114,6 +117,8 @@ public class SpawnEnemy : MonoBehaviour
                 lastenemy = enemy;
                 spawnBool = false;
                 lastTrigger = true;
+                if (lastenemy == null)
+                    On_UnitWindow();
             }
         }
         /*if (spawnBool == true)
@@ -141,5 +146,15 @@ public class SpawnEnemy : MonoBehaviour
         spawnBool = true;
         Debug.Log("이번 라운드 : " + roundNum);
         num = 0;
+        if(roundNum==1)
+            GameObject.Find("GameManager").GetComponent<RandomAlgorithms>().SpawnUnit2();
+        else if(roundNum==2)
+            GameObject.Find("GameManager").GetComponent<RandomAlgorithms>().SpawnUnit3();
+    }
+    public void On_UnitWindow()
+    {
+        Debug.Log(Unit_Window);
+        UnitOn = !UnitOn;
+        Unit_Window.SetActive(UnitOn);
     }
 }

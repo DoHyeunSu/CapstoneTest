@@ -24,6 +24,7 @@ public class EnemyStat : MonoBehaviour
         if (HpValue <= 0)
         {
             Destroy(gameObject);
+            GameObject.Find("Canvas").GetComponent<CoinScript>().AddCoin();
         }
         if (EnemyKey == 103 && HpValue <= 0)
             end.Finish = true;
