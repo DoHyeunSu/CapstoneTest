@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class EndText : MonoBehaviour
 {
     private GameObject panel;
+    private GameObject Unit_Window;
     private Text text;
     private int num;
     public bool Finish = true;
@@ -13,6 +14,7 @@ public class EndText : MonoBehaviour
     void Start()
     {
         panel = GameObject.Find("FinishPanel");
+        Unit_Window = GameObject.Find("Unit_Window");
         text = panel.GetComponentInChildren<Text>();
         panel.SetActive(false);
         num = Random.Range(1, 4);
@@ -56,6 +58,7 @@ public class EndText : MonoBehaviour
     public void EndPanelAni()
     {
         panel.SetActive(true);
+        Unit_Window.SetActive(false);
     }
     public void ClickEnd()
     {

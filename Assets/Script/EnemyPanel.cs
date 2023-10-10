@@ -33,7 +33,7 @@ public class EnemyPanel : MonoBehaviour
         }
         try
         {
-            if (obj.tag == "Enemy" && obj != null)
+            if (obj.tag == "Enemy" /*&& obj != null*/)
                 TextObject.GetComponent<Text>().text = "HP : " + obj.GetComponent<EnemyStat>().returnHP();
 
             if (obj == null || obj.GetComponent<EnemyStat>().returnHP() < 0)
@@ -44,8 +44,7 @@ public class EnemyPanel : MonoBehaviour
         }
         catch
         {
-            TextObject.GetComponent<Text>().text = "오류 다시 클릭하시오";
+            TextObject.GetComponent<Text>().text = "오류 더블 클릭하시오";
         }
-            
     }
 }

@@ -9,12 +9,19 @@ public class EnemyStat : MonoBehaviour
     public int EnemyKey;
     private bool lastFinish;
     private EndText end;
+    private int num;
 
     // Start is called before the first frame update
     void Start()
     {
+        if (PlayerPrefs.GetInt("Level", 0) == 1)//난이도에 따른 몬스터 체력 계수
+            num = 50;
+        else if (PlayerPrefs.GetInt("Level", 0) == 2)
+            num = 100;
+        else if (PlayerPrefs.GetInt("Level", 0) == 3)
+            num = 100;
         csv = GameObject.Find("GameManager").GetComponent<CsvReader>();
-        HpValue = csv.GetData(EnemyKey).MaxHp;
+        HpValue = csv.GetData(EnemyKey).MaxHp + num;
         end = GameObject.Find("Canvas").GetComponent<EndText>();
     }
 
