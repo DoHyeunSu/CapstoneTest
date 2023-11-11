@@ -47,6 +47,11 @@ public class UnitPanel : MonoBehaviour
     {
         ismove = !ismove;
     }
+    public void OnClickUnitPanel2()
+    {
+        if (GameObject.Find("Panel").GetComponent<PanelMove>().Getismove())
+            GameObject.Find("Panel").GetComponent<PanelMove>().OnClick();
+    }
     public bool GetismoveUnit()
     {
         return ismove;

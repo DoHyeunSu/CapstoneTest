@@ -35,7 +35,7 @@ public class FailScript : MonoBehaviour
             }
             num++;
             Debug.Log(num);
-            if (num >= 12)
+            if (num >= 10)
             {
                 end.Finish = false;
                 pause_b = true;

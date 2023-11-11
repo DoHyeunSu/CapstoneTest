@@ -15,7 +15,7 @@ public class PanelMove : MonoBehaviour
         vec1 = this.transform.position;
         vec2 = new Vector2(this.transform.position.x, this.transform.position.y + 2f);
         tiles=new GameObject[20];
-        for(int i = 0; i < 15; i++)
+        for(int i = 0; i < 7; i++)
         {
             tiles[i] = (GameObject)Instantiate(Tile, new Vector3(this.transform.position.x + i - 7, this.transform.position.y, 100f), Quaternion.identity);
             tiles[i].transform.SetParent(this.transform);
@@ -37,6 +37,12 @@ public class PanelMove : MonoBehaviour
     public void OnClick()
     {
         ismove = !ismove;
+        
+    }
+    public void OnClick2()
+    {
+        if (GameObject.Find("UnitPanel").GetComponent<UnitPanel>().GetismoveUnit())
+            GameObject.Find("UnitPanel").GetComponent<UnitPanel>().OnClickUnitPanel();
     }
     public bool Getismove()
     {

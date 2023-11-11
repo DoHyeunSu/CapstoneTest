@@ -29,13 +29,13 @@ public class EndText : MonoBehaviour
             switch (num)
             {
                 case 1:
-                    text.text = "허접~ 당신 어디서 가서 게임좀 할 줄 알아요~ 이런 소리하면 안되겠네요!";
+                    text.text = "너 게임 ㅈㄴ 못한다 ㅋㅋㅋ";
                     break;
                 case 2:
-                    text.text = "오우 쒵! 보는 눈에 건강이 안좋다는것은 이럴때 쓰는 말이군요? 당신 게임보니까 나오네요";
+                    text.text = "너 롤도 브론즈지?";
                     break;
                 case 3:
-                    text.text = "그거 그렇게 하는거 아닌데...당신 진짜 답답하네요...";
+                    text.text = "게임을 클리어하지 못하셨습니다!";
                     break;
             }
         }
@@ -44,13 +44,13 @@ public class EndText : MonoBehaviour
             switch (num)
             {
                 case 1:
-                    text.text = "이정도면 나 게임좀 잘해 라고 말해도 되겠네요!";
+                    text.text = "게임 클리어를 축하합니다~~";
                     break;
                 case 2:
-                    text.text = "오우 쒵! 깨지말라고 만든걸 어떻게 깬거야?!";
+                    text.text = "클리어 축하하고 이제 집이나 가";
                     break;
                 case 3:
-                    text.text = "운빨게임을 통과하다니..오늘 복권 사러가세요!";
+                    text.text = "이걸 클리어까지 하고 가는거야...? 너도 참...";
                     break;
             }
         }

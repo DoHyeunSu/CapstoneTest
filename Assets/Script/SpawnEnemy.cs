@@ -79,7 +79,7 @@ public class SpawnEnemy : MonoBehaviour
                     EnemyNum[num] = (GameObject)Instantiate(enemy_prefab[0], vec, Quaternion.identity);
                     if (num == PlayerPrefs.GetInt("Enemy", 0) - 1)
                     {
-                        Debug.Log("마지막");
+                        //Debug.Log("마지막");
                         lastenemy = EnemyNum[num];
                     }
                         
