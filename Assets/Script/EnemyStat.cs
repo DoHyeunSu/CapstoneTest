@@ -19,7 +19,7 @@ public class EnemyStat : MonoBehaviour
         else if (PlayerPrefs.GetInt("Level", 0) == 2)
             num = 100;
         else if (PlayerPrefs.GetInt("Level", 0) == 3)
-            num = 100;
+            num = 150;
         csv = GameObject.Find("GameManager").GetComponent<CsvReader>();
         HpValue = csv.GetData(EnemyKey).MaxHp + num;
         end = GameObject.Find("Canvas").GetComponent<EndText>();

@@ -3,6 +3,6 @@
 2,Trio,40,3,0,0,Rare
 3,Iso,60,3,0,0,Unique
 4,Mest,100,3,0,0,Legend
-101,Enemy1,0,0,300,300,Weak
-102,Enemy2,0,0,700,700,Medium
-103,Enemy3,0,0,5000,5000,Strong
+101,Enemy1,0,0,100,100,Weak
+102,Enemy2,0,0,200,200,Medium
+103,Enemy3,0,0,300,300,Strong
