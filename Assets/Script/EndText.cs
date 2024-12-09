@@ -29,10 +29,10 @@ public class EndText : MonoBehaviour
             switch (num)
             {
                 case 1:
-                    text.text = "너 게임 ㅈㄴ 못한다 ㅋㅋㅋ";
+                    text.text = "아쉽네요 게임에 패배하셨습니다";
                     break;
                 case 2:
-                    text.text = "너 롤도 브론즈지?";
+                    text.text = "다음에는 꼭 승리하시기를!";
                     break;
                 case 3:
                     text.text = "게임을 클리어하지 못하셨습니다!";
@@ -47,10 +47,10 @@ public class EndText : MonoBehaviour
                     text.text = "게임 클리어를 축하합니다~~";
                     break;
                 case 2:
-                    text.text = "클리어 축하하고 이제 집이나 가";
+                    text.text = "게임 클리어 수고하셨습니다!";
                     break;
                 case 3:
-                    text.text = "이걸 클리어까지 하고 가는거야...? 너도 참...";
+                    text.text = "클리어 하시다니 정말 대단하세요!";
                     break;
             }
         }
